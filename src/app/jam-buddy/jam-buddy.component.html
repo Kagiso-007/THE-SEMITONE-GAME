@@ -1,0 +1,28 @@
+<h2>THE SEMITONE GAME </h2>
+<p id="instructions" (click)="giveInstructions()">?</p>
+<div class="game_window">
+
+<div>
+    <p><span class="note">{{note1}}</span> 
+        <span class="note">{{note2}}</span></p>
+        <button id = "generate_button"mat-raised-button (click)="returnSelectedNotes()">Generate Notes</button>
+</div>
+<div *ngIf="note1 != '?'">
+    <mat-form-field id="input_field">
+        <mat-label>Semitones</mat-label>
+        <input matInput type="number"
+        value="0"
+        min="1"
+        max="12"
+        #semitonesInBetween
+        autocomplete="off"/>
+    </mat-form-field>
+
+    <button mat-raised-button 
+    (click)="checkAnswer(semitonesInBetween.value)"
+    id="submit_button">Check</button>
+</div>
+<div *ngIf="message">
+  <p id="message">{{message}}</p>  
+</div>
+</div>

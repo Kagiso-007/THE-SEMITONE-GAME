@@ -1,0 +1,47 @@
+h2{
+    text-align: center;
+    padding: 1%;
+    color: white;
+}
+#instructions{
+    cursor: pointer;
+    line-height: 25px;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: thick black;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-weight: bolder;
+    background-color: white;
+}
+.game_window{
+    height: 50%;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 2%;
+    background-color: rgb(139, 139, 139);
+    line-height: 40px;
+    border: solid white;
+}
+.note{
+    font-weight: bold;
+    border-radius: 15px;
+    color: #fff;
+    background-color: rgb(0, 0, 0);
+    margin-left: 1.5%;
+    padding: 12px;
+    border: solid white;
+}
+#input_field{
+    width: 10%;
+    padding: 5%;
+    padding-bottom: 0%;
+}
+#message{
+    font-size: 17px;
+   font-weight: bold;
+   font-variant: small-caps; 
+}
