@@ -50,7 +50,6 @@ export class JamBuddyComponent implements OnInit {
       isCorrect = false;
       this.message = "that is incorrect, please try again"
     }
-    this.returnSelectedNotes();
     return isCorrect;
   }
 }
