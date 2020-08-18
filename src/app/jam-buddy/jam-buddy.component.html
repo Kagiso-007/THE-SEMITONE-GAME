@@ -3,26 +3,27 @@
 <div class="game_window">
 
 <div>
-    <p><span class="note">{{note1}}</span> 
-        <span class="note">{{note2}}</span></p>
-        <button id = "generate_button"mat-raised-button (click)="returnSelectedNotes()">Generate Notes</button>
+    <p><span class="note">{{(note1 | async)}}</span> 
+        <span class="note">{{(note2 | async)}}</span></p>
+        <button id = "generate_button" 
+        mat-raised-button 
+        (click)="generateNotes()">Generate Notes</button>
 </div>
-<div *ngIf="note1 != '?'">
+<div *ngIf="(note1 | async) != '?'">
     <mat-form-field id="input_field">
         <mat-label>Semitones</mat-label>
         <input matInput type="number"
-        value="0"
         min="1"
         max="12"
-        #semitonesInBetween
+        #inputValue
         autocomplete="off"/>
     </mat-form-field>
 
     <button mat-raised-button 
-    (click)="checkAnswer(semitonesInBetween.value)"
+    (click)="checkAnswer(inputValue.value)"
     id="submit_button">Check</button>
 </div>
-<div *ngIf="message">
+<!-- <div *ngIf="message">
   <p id="message">{{message}}</p>  
-</div>
+</div> -->
 </div>

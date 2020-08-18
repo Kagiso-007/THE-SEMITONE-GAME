@@ -8,14 +8,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog'
+import { NgRedux, NgReduxModule } from '@angular-redux/store';
 
 import { InstructionDialogComponent } from './instruction-dialog/instruction-dialog.component';
+import { IAPPState, rootReducer, INITIAL_STATE } from './store';
+import { ResultsDialogComponent } from './results-dialog/results-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JamBuddyComponent,
-    InstructionDialogComponent
+    InstructionDialogComponent,
+    ResultsDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -23,9 +27,15 @@ import { InstructionDialogComponent } from './instruction-dialog/instruction-dia
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    NgReduxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule { 
+  constructor(ngRedux: NgRedux<IAPPState>){
+    ngRedux.configureStore(rootReducer, INITIAL_STATE);
+  }
+}

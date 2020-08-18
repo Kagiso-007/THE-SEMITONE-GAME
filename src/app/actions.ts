@@ -1,0 +1,2 @@
+export const CHECK_ANSWER = 'CHECK_ANSWER';
+export const GENERATE_NOTES = 'GENERATE_NOTES';
