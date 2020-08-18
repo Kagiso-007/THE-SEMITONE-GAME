@@ -1,1 +1,8 @@
-<p>results-dialog works!</p>
+<div mat-dialog-content>
+    <h3><b>RESULTS:</b></h3>
+    <p>{{(message | async)}}</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>OK</button>
+</div>
+

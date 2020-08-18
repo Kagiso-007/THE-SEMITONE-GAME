@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { InstructionDialogComponent } from '../instruction-dialog/instruction-dialog.component';
+import { ResultsDialogComponent } from '../results-dialog/results-dialog.component';
 
 import { NgRedux, select } from '@angular-redux/store';
 import { IAPPState } from '../store';
@@ -26,6 +27,10 @@ export class JamBuddyComponent implements OnInit {
   giveInstructions(){
     this.dialog.open(InstructionDialogComponent)
   }
+
+  giveResults(){
+    this.dialog.open(ResultsDialogComponent)
+  }
   
   generateNotes(){
     this.ngRedux.dispatch({type: GENERATE_NOTES})
@@ -33,5 +38,11 @@ export class JamBuddyComponent implements OnInit {
 
   checkAnswer(inputValue: number){
     this.ngRedux.dispatch({type: CHECK_ANSWER, input: inputValue})
+    
+    if((inputValue == undefined) || (inputValue == 0)){
+      return;
+    }else{
+      this.giveResults()
+    }
   }
 }
