@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "semitone-game": {
+      "hosting": {
+        "the-semitone-game": [
+          "semitone-game"
+        ]
+      }
+    }
+  }
+}
