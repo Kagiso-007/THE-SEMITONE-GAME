@@ -1,4 +1,4 @@
-# [TheSemitoneGame](https://kagiso-007.github.io/THE-SEMITONE-GAME/)
+# TheSemitoneGame
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
 
